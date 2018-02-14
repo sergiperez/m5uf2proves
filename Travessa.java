@@ -36,6 +36,9 @@ public class Travessa {
     			if(partits[p][0]+partits[p][1] > 0){
     			    gols += partits[p][0]+partits[p][1]; 
     			}
+    			else {
+    				gols = 2;
+    			}
     		}	
     		return gols/partits.length;
     }
