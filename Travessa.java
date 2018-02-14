@@ -1,15 +1,6 @@
 public class Travessa {
-	static final int maximPartits=15;
-	
-	public static void main(String[] args) {
-		int[][] partits = new int[maximPartits][2];
-    		partits=generarPartits(maximPartits);
-		System.out.println("Els partits jugats són "+pintaJornada(partits));
-		System.out.println("Ha hagut "+calcularVictoriesVisitants(partits)+" victòries visitants ");
-	}
-	
-	
-	private static int[][] generarPartits(int numeroPartits){
+		
+	public static int[][] generarPartits(int numeroPartits){
     		int [][] matriu = new int[numeroPartits][2];
     		for(int p=0;p<numeroPartits;p++){
 			matriu[p][0]=(int) (Math.random()*4);
@@ -18,9 +9,9 @@ public class Travessa {
 		return matriu;
 	}	
 		
-	private static String pintaJornada(int[][] partits){
+	public static String pintaJornada(int[][] partits){
 		String cadena="{";
-		for(int p=0;p<partits.length-2;p++){
+		for(int p=0;p<partits.length-1;p++){
 			cadena+="{"+partits[p][0]+",";
 			cadena+=partits[p][1]+"},";
 		}
@@ -29,7 +20,7 @@ public class Travessa {
 		return cadena;
 	}
 	
-    	private static int calcularVictoriesVisitants(int[][] partits){
+    	public static int calcularVictoriesVisitants(int[][] partits){
 		int victories=0;
 		for(int p=0;p<partits.length;p++){
 			if(partits[p][0]<=partits[p][1]){
@@ -37,5 +28,16 @@ public class Travessa {
 			}
 		}	
 		return victories;
-    	}	
+    	}
+    	
+    	public static float mitjaGolsPartit(int[][] partits){
+    		int gols=0;
+    		for(int p=0;p<partits.length;p++){
+    			if(partits[p][0]+partits[p][1] > 0){
+    			    gols += partits[p][0]+partits[p][1]; 
+    			}
+    		}	
+    		return gols/partits.length;
+    }
+    	
 }
