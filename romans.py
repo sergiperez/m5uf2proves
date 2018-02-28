@@ -7,7 +7,7 @@ def transformar(nombreArab):
      >>> transformar(1)
      'I'
     '''
-    return 'I' ; 
+    return 'I' 
         
 if __name__ == "__main__":
     import doctest
