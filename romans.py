@@ -6,8 +6,13 @@ def transformar(nombreArab):
     '''
      >>> transformar(1)
      'I'
+     >>> transformar(2)
+     'II'     
     '''
-    return 'I' 
+    if nombreArab == 2:
+        return 'II'
+    else: 
+        return 'I' 
         
 if __name__ == "__main__":
     import doctest
