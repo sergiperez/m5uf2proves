@@ -1,3 +1,7 @@
+package javatest;
+
+import java.io.*; 
+
 public class Travessa {
 		
 	public static int[][] generarPartits(int numeroPartits){
@@ -44,3 +48,6 @@ public class Travessa {
     }
     	
 }
+
+
+
